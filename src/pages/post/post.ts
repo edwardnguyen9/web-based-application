@@ -1,3 +1,4 @@
+import { UserPage } from './../user/user';
 import { Comment } from './../../providers/comment';
 import { Favourite } from './../../providers/favourite';
 import { Media } from './../../providers/media';
@@ -35,6 +36,11 @@ export class PostPage {
     this.getComments();
   }
 
+  // Go to user page
+  toUser = (id) => {
+    this.navCtrl.push(UserPage, {user_id: id});
+  }
+
   // Get post title, description, etc.
   getDetails = () => {
     this.media.getDetails(this.post_id).subscribe(
@@ -50,13 +56,16 @@ export class PostPage {
 
   // Like
   like = () => {
-    // Add like
-    this.favourite.addFavourite(this.post_id).subscribe(
-      // Update list of likes
-      (res) => {
-        this.getLikes();
-      }
-    );
+    // Prevents sending 2 likes when clicked on image multiple times
+    if (!this.liked) {
+      // Add like
+      this.favourite.addFavourite(this.post_id).subscribe(
+        // Update list of likes
+        (res) => {
+          this.getLikes();
+        }
+      );
+    }
   }
   // Unlike
   unlike = () => {

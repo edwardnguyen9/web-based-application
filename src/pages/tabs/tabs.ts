@@ -1,9 +1,9 @@
+import { UserPage } from './../user/user';
 import { LogoutPage } from './../logout/logout';
 import { UploadPage } from './../upload/upload';
 import { Component } from '@angular/core';
 
 import { HomePage } from '../home/home';
-import { ContactPage } from '../contact/contact';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -13,8 +13,10 @@ export class TabsPage {
   // should be each tab's root Page
   tab1Root: any = HomePage;
   tab2Root: any = UploadPage;
-  tab3Root: any = ContactPage;
+  tab3Root: any = UserPage;
   tab4Root: any = LogoutPage;
-
-  constructor() { }
+  private username: String;
+  constructor() {
+    this.username = JSON.parse(localStorage.getItem('user')).username;
+  }
 }

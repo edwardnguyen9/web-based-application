@@ -17,10 +17,6 @@ export class UploadPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private mediaProvider: Media) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UploadPage');
-  }
-
   upload = (evt, value) => {
     // Get file from event
     const fileElement = evt.target.querySelector('input[type=file]');

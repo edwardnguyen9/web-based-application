@@ -25,7 +25,7 @@ export class Username {
     )
   }
 
-  transform(value) {
+  transform(value): String {
     // Go through list of users
     for (let i = 0; i < this.userList.length; i++) {
       // Compare input value to each user id

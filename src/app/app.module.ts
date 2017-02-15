@@ -7,6 +7,7 @@ import { User } from './../providers/user';
 import { Username } from './../pipes/username';
 import { Thumbnail } from './../pipes/thumbnail';
 // Pages
+import { UserPage } from './../pages/user/user';
 import { PostPage } from './../pages/post/post';
 import { LogoutPage } from './../pages/logout/logout';
 import { UploadPage } from './../pages/upload/upload';
@@ -34,6 +35,7 @@ import { MyApp } from './app.component';
     PostPage,
     RegisterPage,
     UploadPage,
+    UserPage,
     // Pipes
     Thumbnail,
     Username
@@ -53,7 +55,8 @@ import { MyApp } from './app.component';
     LogoutPage,
     PostPage,
     RegisterPage,
-    UploadPage
+    UploadPage,
+    UserPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -18,11 +18,10 @@ export class HomePage {
   ionViewWillEnter() {
     // Check whether user has logged in
     if (this.getStatus()) {
-      // Load home page if true
+      // Get images from server if true
       this.mediaProvider.getMedia().subscribe(
         (res) => {
           this.images = res.json();
-          console.log(this.images);
         }
       )
     } else {
@@ -31,7 +30,7 @@ export class HomePage {
     }
   }
 
-  // Navigate to individual post from home page
+  // Navigate to individual post
   toPost = (id) => {
     this.navCtrl.push(PostPage,{ post_id: id });
   }
