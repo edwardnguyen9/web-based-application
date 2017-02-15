@@ -30,7 +30,6 @@ export class User {
 
   // Log in
   logIn = () => {
-    console.log(this.user);
     return this.http.post(this.url + 'login', this.user);
   }
   

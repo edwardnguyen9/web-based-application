@@ -45,7 +45,6 @@ export class PostPage {
   getDetails = () => {
     this.media.getDetails(this.post_id).subscribe(
       (res) => {
-        console.log(res);
         this.postDetails = res.json();
       },
       (err) => {
@@ -81,7 +80,6 @@ export class PostPage {
   getLikes = () => {
     this.favourite.getFavourites(this.post_id).subscribe(
       (res) => {
-        console.log(res);
         // Receive list of likes
         this.likes = res.json();
         // Check whether user has liked the post
@@ -120,7 +118,6 @@ export class PostPage {
   getComments = () => {
     this.comment.getComments(this.post_id).subscribe(
       (res) => {
-        console.log(res);
         // Receive list of comments
         this.comments = res.json();
       }
