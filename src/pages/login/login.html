@@ -1,0 +1,31 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #loginForm="ngForm" (ngSubmit)="logIn(loginForm.value)">
+    <p>
+      <label>Username:</label>
+      <input type="text" name="username" ngModel required>
+    </p>
+    <p>
+      <label>Password:</label>
+      <input type="password" name="password" ngModel required>
+    </p>
+    <p>
+      <button type="submit" [disabled]="!loginForm.valid">Log In</button>
+      <button (click)="toRegister()" >Register</button>
+    </p>
+  </form>
+</ion-content>

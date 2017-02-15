@@ -1,0 +1,30 @@
+<!--
+  Generated template for the Post page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>post</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <article class="card">
+    <h4>{{ (postDetails.user_id | username) }}</h4>
+    <p>{{ postDetails.title }}</p>
+    <img *ngIf="postDetails.media_type === 'image'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"/>
+    <video *ngIf="postDetails.media_type === 'video'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename" [poster]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.screenshot" controls></video>
+    <audio *ngIf="postDetails.media_type === 'audio'" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename" controls></audio>
+    <p><i class="ion-ios-heart" [hidden]="!liked"></i><i class="ion-ios-heart-outline" [hidden]="liked"></i><span [hidden]="likes.length === 0" ><b>{{ likes.length }}</b></span></p>
+    <textarea rows="3" [(ngModel)]="cmt" placeholder="Comment"></textarea>
+    <button (click)="addComment()">Send</button>
+    <div *ngFor="let cmmt of comments">
+      <p><b>{{ (cmmt.user_id | username) }}</b> {{ cmmt.comment }}</p>
+    </div>
+  </article>
+</ion-content>

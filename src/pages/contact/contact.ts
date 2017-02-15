@@ -1,3 +1,4 @@
+import { User } from './../../providers/user';
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
@@ -8,7 +9,7 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private user: User) {
 
   }
 
