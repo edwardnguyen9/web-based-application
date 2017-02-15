@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <article class="card">
-    <h4 (click)="toUser(postDetails.user_id)" >{{ (postDetails.user_id | username) }}</h4>
+    <h4 (click)="toUser(postDetails.user_id)">{{ (postDetails.user_id | username) }}</h4>
     <p>{{ postDetails.title }}</p>
     <div (dblclick)="like()">
       <img *ngIf="postDetails.media_type === 'image'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"
@@ -30,7 +30,7 @@
       <ion-icon name="heart-outline" [hidden]="liked" (click)="like()"></ion-icon>
       <span [hidden]="likes.length === 0"><b>{{ likes.length }}</b></span>
     </p>
-    <p>{{ postDetails.description }}</p>
+    <p [hidden]="postDetails.description === undefined">{{ postDetails.description }}</p>
     <hr/>
     <div *ngFor="let cmmt of comments">
       <p><b>{{ (cmmt.user_id | username) }}</b> {{ cmmt.comment }}</p>

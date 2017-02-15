@@ -6,9 +6,9 @@
 
 <ion-content padding>
   <div *ngFor="let image of images">
-    <div class="list card">
+    <div padding class="list card">
       <div class="item item-avatar">
-        <h3>{{(image.user_id | username)}}</h3>
+        <h4 (click)="toUser(image.user_id)">{{(image.user_id | username)}}</h4>
       </div>
       <div class="item item-image" (click)="toPost(image.file_id)" >
         <p><b>{{image.title}}</b></p>

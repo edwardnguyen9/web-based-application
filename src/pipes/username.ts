@@ -21,16 +21,18 @@ export class Username {
     this.http.get('http://media.mw.metropolia.fi/wbma/users?token=' + token).subscribe(
       (res) => {
         this.userList = res.json();
+        localStorage.setItem('userList',JSON.stringify(this.userList));
       }
     )
   }
 
-  transform(value): String {
+  transform(value, args?: String): String {
+    if (args === 'old') this.userList = JSON.parse(localStorage.getItem('userList'));
     // Go through list of users
     for (let i = 0; i < this.userList.length; i++) {
       // Compare input value to each user id
-      if (this.userList[i].user_id == value)
-      // Return the username of correct id
+      if (this.userList[i].user_id === value)
+        // Return the username of correct id
         return this.userList[i].username;
     }
   }

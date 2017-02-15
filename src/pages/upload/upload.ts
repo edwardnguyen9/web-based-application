@@ -17,6 +17,10 @@ export class UploadPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private mediaProvider: Media) {}
 
+  ionViewWillEnter() {
+    console.log('Upload');
+  }
+
   upload = (evt, value) => {
     // Get file from event
     const fileElement = evt.target.querySelector('input[type=file]');

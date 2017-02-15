@@ -1,3 +1,4 @@
+import { UserPage } from './../user/user';
 import { PostPage } from './../post/post';
 import { LoginPage } from './../login/login';
 import { Media } from './../../providers/media';
@@ -30,9 +31,13 @@ export class HomePage {
     }
   }
 
+  // Navigate to user page
+  toUser = (id) => {
+    this.navCtrl.push(UserPage, { user_id: id });
+  }
   // Navigate to individual post
   toPost = (id) => {
-    this.navCtrl.push(PostPage,{ post_id: id });
+    this.navCtrl.push(PostPage, { post_id: id });
   }
 
   // Check whether user has logged in
