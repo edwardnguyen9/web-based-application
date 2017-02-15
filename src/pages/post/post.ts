@@ -85,8 +85,6 @@ export class PostPage {
             this.liked = true;
             break;
           }
-        // Change display accordingly
-        this.display();
       }
     )
   }
@@ -118,12 +116,5 @@ export class PostPage {
         this.comments = res.json();
       }
     )
-  }
-
-
-
-  // Change UI
-  display = () => {
-
   }
 }
