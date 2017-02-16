@@ -21,7 +21,7 @@
       <img *ngIf="postDetails.media_type === 'image'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"
       />
       <video *ngIf="postDetails.media_type === 'video'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"
-        [poster]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.screenshot" controls></video>
+        [poster]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.screenshot" controls onclick="this.paused ? this.play() : this.pause()" ></video>
         <audio *ngIf="postDetails.media_type === 'audio'" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"
           controls></audio>
     </div>

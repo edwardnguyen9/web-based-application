@@ -4,6 +4,7 @@ import { Favourite } from './../providers/favourite';
 import { Media } from './../providers/media';
 import { User } from './../providers/user';
 // Pipes
+import { Seemore } from './../pipes/seemore';
 import { Username } from './../pipes/username';
 import { Thumbnail } from './../pipes/thumbnail';
 // Pages
@@ -37,6 +38,7 @@ import { MyApp } from './app.component';
     UploadPage,
     UserPage,
     // Pipes
+    Seemore,
     Thumbnail,
     Username
   ],
