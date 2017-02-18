@@ -14,18 +14,18 @@
 
 
 <ion-content padding>
-  <form #loginForm="ngForm" (ngSubmit)="logIn(loginForm.value)">
-    <p>
-      <label>Username:</label>
-      <input type="text" name="username" ngModel required>
-    </p>
-    <p>
-      <label>Password:</label>
-      <input type="password" name="password" ngModel required>
-    </p>
-    <p>
-      <button type="submit" [disabled]="!loginForm.valid">Log In</button>
-      <button (click)="toRegister()" >Register</button>
-    </p>
-  </form>
+  <ion-list #loginForm="ngForm" (ngSubmit)="logIn(loginForm.value)">
+    <ion-item>
+      <ion-label>Username:</ion-label>
+      <ion-input type="text" name="username" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" name="password" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button round type="submit" [disabled]="!loginForm.valid">Log In</button>
+      <button ion-button round (click)="toRegister()" >Register</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
