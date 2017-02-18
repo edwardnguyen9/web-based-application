@@ -14,26 +14,34 @@
 
 
 <ion-content padding>
-  <ion-list #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
-    <ion-item>
-      <label>Username:</label>
-      <input type="text" name="username" ngModel required>
-    </ion-item>
-    <ion-item>
-      <label>Password:</label>
-      <input type="password" name="password" ngModel required>
-    </ion-item>
-    <ion-item>
-      <label>Email:</label>
-      <input type="email" name="email" ngModel required>
-    </ion-item>
-    <ion-item>
-      <label>Full name:</label>
-      <input type="text" name="full_name" ngModel>
-    </ion-item>
-    <ion-item>
-      <button ion-button round type="submit" [disabled]="!registerForm.valid">Register</button>
-      <button ion-button round (click)="toLogin()">Log In</button>
-    </ion-item>
+  <ion-list>
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+      <ion-item>
+        <ion-label floating>Username:</ion-label>
+        <ion-input type="text" name="username" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password:</ion-label>
+        <ion-input type="password" name="password" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email:</ion-label>
+        <ion-input type="email" name="email" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Full name (optional):</ion-label>
+        <ion-input type="text" name="full_name" ngModel></ion-input>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button block round type="submit" [disabled]="!registerForm.valid">Register</button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button block round (click)="toLogin()">Log In</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
   </ion-list>
 </ion-content>

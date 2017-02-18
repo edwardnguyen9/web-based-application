@@ -15,17 +15,22 @@
 
 <ion-content padding>
   <form #uploadForm="ngForm" (ngSubmit)="upload($event, uploadForm.value)">
-    <label class="item item-input">
-      <input type="file" name="file" ngModel placeholder="Choose a file">
-    </label>
-    <label class="item item-input">
-      <input type="text" name="title" ngModel placeholder="Title" required>
-    </label>
-    <label class="item item-input">
-      <input type="text" name="description" placeholder="Description" value="" ngModel>
-    </label>
-    <button ion-button block round type="submit" [disabled]="!uploadForm.valid">
-      Upload
-    </button>
+    <ion-list>
+      <ion-item>
+        <label padding>Choose a file</label><br>
+        <input padding type="file" name="file" ngModel placeholder="Browse">
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" name="title" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-input type="text" name="description" value="" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button large block round type="submit" [disabled]="!uploadForm.valid">Upload</button>
+      </ion-item>
+    </ion-list>
   </form>
 </ion-content>
