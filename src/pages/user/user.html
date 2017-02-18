@@ -14,13 +14,14 @@
 
 
 <ion-content padding>
-    <div *ngFor="let image of images">
-    <div class="list card">
-      <div class="item item-image" (click)="toPost(image.file_id)" >
+  <div *ngFor="let image of images">
+    <ion-card>
+      <ion-card-content (click)="toPost(image.file_id)" >
         <p><b>{{image.title}}</b></p>
+        <p item-right>{{image.time_added | time}}</p>
         <img [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + (image.filename | thumbnail)" *ngIf="image.media_type !== 'audio'">
         <img src="../../assets/audio.png" width="160px" *ngIf="image.media_type === 'audio'">
-      </div>
-    </div>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

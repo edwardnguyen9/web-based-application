@@ -16,6 +16,7 @@
 <ion-content padding>
   <article class="card">
     <h4 (click)="toUser(postDetails.user_id)">{{ (postDetails.user_id | username) }}</h4>
+    <!--p item-right>{{ postDetails.time_added | time }}</p-->
     <p>{{ postDetails.title }}</p>
     <div (dblclick)="like()">
       <img *ngIf="postDetails.media_type === 'image'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"

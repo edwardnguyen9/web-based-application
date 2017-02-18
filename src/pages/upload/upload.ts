@@ -1,4 +1,4 @@
-import { TabsPage } from './../tabs/tabs';
+import { HomePage } from './../home/home';
 import { Media } from './../../providers/media';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -30,7 +30,7 @@ export class UploadPage {
     this.mediaProvider.upload(formData).subscribe(
       (res) => {
         // Navigate to home page after finished
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.push(HomePage);
       },
       (err) => {
         console.log(err);

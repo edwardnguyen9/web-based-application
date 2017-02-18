@@ -4,6 +4,7 @@ import { Favourite } from './../providers/favourite';
 import { Media } from './../providers/media';
 import { User } from './../providers/user';
 // Pipes
+import { Time } from './../pipes/time';
 import { Seemore } from './../pipes/seemore';
 import { Username } from './../pipes/username';
 import { Thumbnail } from './../pipes/thumbnail';
@@ -40,6 +41,7 @@ import { MyApp } from './app.component';
     // Pipes
     Seemore,
     Thumbnail,
+    Time,
     Username
   ],
   imports: [
