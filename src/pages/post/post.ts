@@ -109,7 +109,7 @@ export class PostPage {
         (res) => {
           // Reload page
           this.cmt = '';
-          this.ionViewWillEnter();
+          this.getComments();
         }
       );
     }
@@ -119,7 +119,7 @@ export class PostPage {
     this.comment.getComments(this.post_id).subscribe(
       (res) => {
         // Receive list of comments
-        this.comments = res.json();
+        this.comments = res.json().reverse();
       }
     )
   }

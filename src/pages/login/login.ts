@@ -61,6 +61,7 @@ export class LoginPage {
       (res) => {
         // Receive response
         const data = res.json();
+        console.log(data);
         // Save user data to local storage
         this.user = data.user;
         this.user.token = data.token;

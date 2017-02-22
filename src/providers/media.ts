@@ -21,7 +21,7 @@ export class Media {
     const temp = (num === undefined)? '' : ("?limit=" + num);
     return this.http.get(this.url + temp);
   }
-  // Get media by user 
+  // Get media by user
   getMediaByUser = (id?: String) => {
     const temp = (id === undefined)? ('/user?token=' + this.token) : ('/user/' + id);
     return this.http.get(this.url + temp);

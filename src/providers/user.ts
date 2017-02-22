@@ -14,7 +14,7 @@ export class User {
   private user: any = {};
   private url: String = 'http://media.mw.metropolia.fi/wbma/';
   constructor(public http: Http) {
-    
+
   }
 
   // Manipulate variable
@@ -32,7 +32,7 @@ export class User {
   logIn = () => {
     return this.http.post(this.url + 'login', this.user);
   }
-  
+
   // Register
   register = () => {
     return this.http.post(this.url + 'users', this.user);

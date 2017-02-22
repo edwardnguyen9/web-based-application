@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngFor="let image of images">
+  <ion-list *ngFor="let image of images">
     <ion-card padding>
       <ion-item (click)="toUser(image.user_id)">
         <h3 item-left>{{(image.user_id | username)}}</h3>
@@ -17,5 +17,5 @@
         <p><b>{{image.title | seemore: 50}}</b></p>
       </ion-card-content>
     </ion-card>
-  </div>
+  </ion-list>
 </ion-content>

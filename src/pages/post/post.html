@@ -22,7 +22,7 @@
       <img *ngIf="postDetails.media_type === 'image'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"
       />
       <video *ngIf="postDetails.media_type === 'video'" width="100%" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"
-        [poster]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.screenshot" controls onclick="this.paused ? this.play() : this.pause()" ></video>
+        [poster]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.screenshot" controls onclick="this.paused ? this.play() : this.pause()"></video>
         <audio *ngIf="postDetails.media_type === 'audio'" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + postDetails.filename"
           controls></audio>
     </div>
@@ -33,10 +33,10 @@
     </p>
     <p [hidden]="postDetails.description === undefined">{{ postDetails.description }}</p>
     <hr/>
+    <textarea rows="5" cols="50" [(ngModel)]="cmt" placeholder="Comment"></textarea>
+    <button ion-button (click)="addComment()">Send</button>
     <div *ngFor="let cmmt of comments">
       <p><b>{{ (cmmt.user_id | username) }}</b> {{ cmmt.comment }}</p>
     </div>
-    <textarea rows="3" [(ngModel)]="cmt" placeholder="Comment"></textarea>
-    <button (click)="addComment()">Send</button>
   </article>
 </ion-content>

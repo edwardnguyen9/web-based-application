@@ -1,8 +1,10 @@
+import { SearchPage } from './../pages/search/search';
 // Providers
 import { Comment } from './../providers/comment';
 import { Favourite } from './../providers/favourite';
 import { Media } from './../providers/media';
 import { User } from './../providers/user';
+import { Search } from './../providers/search';
 // Pipes
 import { Time } from './../pipes/time';
 import { Seemore } from './../pipes/seemore';
@@ -38,6 +40,7 @@ import { MyApp } from './app.component';
     RegisterPage,
     UploadPage,
     UserPage,
+    SearchPage,
     // Pipes
     Seemore,
     Thumbnail,
@@ -60,7 +63,8 @@ import { MyApp } from './app.component';
     PostPage,
     RegisterPage,
     UploadPage,
-    UserPage
+    UserPage,
+    SearchPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
@@ -68,6 +72,7 @@ import { MyApp } from './app.component';
     User,
     Media,
     Favourite,
+    Search,
     Comment
     ]
 })
